@@ -2,10 +2,12 @@
 This project is a Django-based backend for a media processing application. It accepts images from a React frontend, saves them in the database, and generates a video from the image after a delay of 30 seconds. The status of the image processing is updated at each step, and the user can view their uploaded images and generated videos.
 
 
-# Docker build:
+## Docker build:
 `docker-compose up --build`
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+## Run without docker
 ## Prerequisites
 `Python 3.x`
 
