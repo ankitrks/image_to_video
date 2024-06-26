@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    container_name: django_backend
+    command: gunicorn --workers=3 image_to_video.wsgi:application --bind 0.0.0.0:8080
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app
+    environment:
+      - DEBUG=1
+      - DB_ENGINE=django.db.backends.sqlite3
+      - DB_NAME=/app/db.sqlite3  # Path to SQLite database file
