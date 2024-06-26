@@ -3,7 +3,9 @@ This project is a Django-based backend for a media processing application. It ac
 
 ## Prerequisites
 `Python 3.x`
+
 `pip (Python package installer)`
+
 `virtualenv (optional but recommended)`
 
 ## Installation
@@ -53,26 +55,22 @@ python manage.py runserver
 
 ### API Endpoints
 
-```
-POST /api/upload/: Upload an image
-```
-```
-GET /api/status/<id>/: Get the status of a media file
-```
-```
-GET /api/media/: List all media files
-```
+`POST /api/upload/: Upload an image`
+
+`GET /api/status/<id>/: Get the status of a media file`
+
+`GET /api/media/: List all media files`
 
 ### Usage
 
 #### Upload an image
-    Send a POST request to /api/upload/ with an image file.
+`Send a POST request to /api/upload/ with an image file.`
 
 #### Check the status
-    Send a GET request to /api/status/<id>/ to check the status of the image processing.
+`Send a GET request to /api/status/<id>/ to check the status of the image processing.`
 
 #### View all media files
-    Send a GET request to /api/media/ to list all uploaded images and generated videos.
+`Send a GET request to /api/media/ to list all uploaded images and generated videos.`
 
 ### Worker Process
 A mock worker process generates a video from the uploaded image after a delay of 30 seconds. This process updates the status of the media file in the database.
