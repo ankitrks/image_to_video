@@ -10,7 +10,7 @@ def generate_video(media_id):
     media = Media.objects.get(id=media_id)
     media.status = 'processing'
     media.save()
-    sleep(30)  # Simulate video generation delay
+    sleep(10)  # Simulate video generation delay
 
     # Mock video generation
     pil_image = PILImage.open(media.image)
