@@ -148,3 +148,5 @@ cython_debug/
 
 # django-extensions SQL file
 *.sql
+
+.DS_Store

@@ -24,6 +24,12 @@ RUN pip install gunicorn
 # Copy the entire project into the container
 COPY . /app/
 
+# Collect static files
+RUN python manage.py collectstatic --noinput
+
+# Create superuser if not exists
+RUN python manage.py check_superuser
+
 # Make port 8080 available to the world outside this container
 EXPOSE 8080
 

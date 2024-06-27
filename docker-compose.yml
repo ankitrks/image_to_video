@@ -9,6 +9,8 @@ services:
       - "8080:8080"
     volumes:
       - .:/app
+      - ./convert_media:/app/convert_media
+      - ./staticfiles:/app/staticfiles
     environment:
       - DEBUG=1
       - DB_ENGINE=django.db.backends.sqlite3
