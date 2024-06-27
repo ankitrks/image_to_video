@@ -1,12 +1,12 @@
-from celery import shared_task
-from .models import Media
+from celery_app import app
 from time import sleep
 from django.core.files.base import ContentFile
 import io
 from PIL import Image as PILImage
 
-@shared_task
+@app.task
 def generate_video(media_id):
+    from convert_media.models import Media
     media = Media.objects.get(id=media_id)
     media.status = 'processing'
     media.save()

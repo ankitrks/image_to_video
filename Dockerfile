@@ -35,3 +35,4 @@ EXPOSE 8080
 
 # Run the application with gunicorn
 CMD ["gunicorn", "--workers=3", "image_to_video.wsgi:application", "--bind", "0.0.0.0:8080"]
+

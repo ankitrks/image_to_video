@@ -1,6 +1,11 @@
 version: '3.8'
 
 services:
+  redis:
+    image: redis:6
+    ports:
+      - "6379:6379"
+
   backend:
     build: .
     container_name: django_backend
@@ -15,3 +20,25 @@ services:
       - DEBUG=1
       - DB_ENGINE=django.db.backends.sqlite3
       - DB_NAME=/app/db.sqlite3  # Path to SQLite database file
+    depends_on:
+      - redis
+
+  celery_worker:
+    build:
+      context: .
+      # dockerfile: Dockerfile.celery
+    command: celery -A tasks worker -l info
+    volumes:
+      - .:/app
+    depends_on:
+      - redis
+
+  # celery_beat:
+  #   build:
+  #     context: .
+  #     # dockerfile: Dockerfile.celery
+  #   command: celery -A tasks beat -l info
+  #   volumes:
+  #     - .:/app
+  #   depends_on:
+  #     - redis

@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework.decorators import action
 from .models import Media
 from .serializers import MediaSerializer
-from .tasks import generate_video
+from tasks import generate_video
 
 class MediaViewSet(viewsets.ModelViewSet):
     queryset = Media.objects.all()
