@@ -5,6 +5,12 @@ This project is a Django-based backend for a media processing application. It ac
 ## Run with Docker:
 `docker-compose up --build`
 
+This will create a superuser
+
+`username - admin`
+
+`password - adminpassword`
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Run without docker
