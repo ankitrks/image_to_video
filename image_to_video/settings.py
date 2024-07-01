@@ -22,6 +22,9 @@ sys.path.append(BASE_DIR)
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure--2co=00yy)-wz3eyk4$4l%1--svr&$s-c)rje^095wqor+0-c6'
+
+# Generated from code:
+# FERNET_KEY = Fernet.generate_key()
 FERNET_KEY = '4o2JFywuInROSadD9MF3MI7lKWikb3v9qInzAp8f6iw='
 
 # SECURITY WARNING: don't run with debug turned on in production!

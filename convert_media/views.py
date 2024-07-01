@@ -28,8 +28,6 @@ class MediaViewSet(viewsets.ModelViewSet):
         media = self.get_object()
         return Response({'status': media.status})
 
-# Generate a key for encryption and decryption (this should be kept secure and secret)
-# key = Fernet.generate_key()
 cipher_suite = Fernet(settings.FERNET_KEY)
 
 @csrf_exempt
@@ -47,7 +45,6 @@ def generate_token(request, video_id):
 
 def stream_video(request, token):
     try:
-        print(token)
         decoded_video_id = base64.urlsafe_b64decode(token.encode()).decode('utf-8')
         video_id = cipher_suite.decrypt(decoded_video_id.encode()).decode('utf-8')
 
