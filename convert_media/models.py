@@ -1,12 +1,11 @@
 from django.db import models
 
-# class Image(models.Model):
-#     image = models.ImageField(upload_to='images/')
-#     status = models.CharField(max_length=20, default='uploaded')
+class TokenStore(models.Model):
+    token = models.TextField(unique=True)  # Unique token field
+    created_at = models.DateTimeField(auto_now_add=True)  # Timestamp of token creation
 
-# class Video(models.Model):
-#     video = models.FileField(upload_to='videos/')
-#     image = models.OneToOneField(Image, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.token
 
 class Media(models.Model):
     image = models.ImageField(upload_to='images/', null=True, blank=True)

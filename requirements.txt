@@ -22,3 +22,4 @@ vine==5.1.0
 wcwidth==0.2.13
 redis>=3.5,<4.0
 gunicorn>=20.0,<21.0
+cryptography==42.0.8
